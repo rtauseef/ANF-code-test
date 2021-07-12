@@ -15,6 +15,11 @@
 		3E727EDF2672708B006C11AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E727EDD2672708B006C11AC /* LaunchScreen.storyboard */; };
 		3E727EEA2672708B006C11AC /* ANFExploreCardTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E727EE92672708B006C11AC /* ANFExploreCardTableViewControllerTests.swift */; };
 		3E727F03267281F7006C11AC /* ANFExploreCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E727F02267281F7006C11AC /* ANFExploreCardTableViewController.swift */; };
+		8889A2162698CF2A003375E6 /* ShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889A20D2698CF2A003375E6 /* ShopModel.swift */; };
+		8889A2172698CF2A003375E6 /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889A20E2698CF2A003375E6 /* ShopViewModel.swift */; };
+		8889A21A2698CF2A003375E6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889A2122698CF2A003375E6 /* Constants.swift */; };
+		8889A21B2698CF2A003375E6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889A2132698CF2A003375E6 /* Extensions.swift */; };
+		8889A21D2698CF2A003375E6 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889A2152698CF2A003375E6 /* ServiceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,11 @@
 		3E727EE92672708B006C11AC /* ANFExploreCardTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANFExploreCardTableViewControllerTests.swift; sourceTree = "<group>"; };
 		3E727EEB2672708B006C11AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E727F02267281F7006C11AC /* ANFExploreCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANFExploreCardTableViewController.swift; sourceTree = "<group>"; };
+		8889A20D2698CF2A003375E6 /* ShopModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopModel.swift; sourceTree = "<group>"; };
+		8889A20E2698CF2A003375E6 /* ShopViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
+		8889A2122698CF2A003375E6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8889A2132698CF2A003375E6 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8889A2152698CF2A003375E6 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,14 +91,16 @@
 		3E727ED126727088006C11AC /* ANF Code Test */ = {
 			isa = PBXGroup;
 			children = (
-				3E727F02267281F7006C11AC /* ANFExploreCardTableViewController.swift */,
 				3E727ED226727088006C11AC /* AppDelegate.swift */,
 				3E727ED426727088006C11AC /* SceneDelegate.swift */,
+				3E727F02267281F7006C11AC /* ANFExploreCardTableViewController.swift */,
 				3E727ED826727088006C11AC /* Main.storyboard */,
 				3E727EDB2672708B006C11AC /* Assets.xcassets */,
 				3E727EDD2672708B006C11AC /* LaunchScreen.storyboard */,
 				3E727EE02672708B006C11AC /* Info.plist */,
 				3E4AB9392676D86100C79456 /* exploreData.json */,
+				8889A2112698CF2A003375E6 /* HelperCalss */,
+				8889A20C2698CF2A003375E6 /* ViewModels */,
 			);
 			path = "ANF Code Test";
 			sourceTree = "<group>";
@@ -100,6 +112,25 @@
 				3E727EEB2672708B006C11AC /* Info.plist */,
 			);
 			path = "ANF Code TestTests";
+			sourceTree = "<group>";
+		};
+		8889A20C2698CF2A003375E6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8889A20D2698CF2A003375E6 /* ShopModel.swift */,
+				8889A20E2698CF2A003375E6 /* ShopViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8889A2112698CF2A003375E6 /* HelperCalss */ = {
+			isa = PBXGroup;
+			children = (
+				8889A2122698CF2A003375E6 /* Constants.swift */,
+				8889A2132698CF2A003375E6 /* Extensions.swift */,
+				8889A2152698CF2A003375E6 /* ServiceManager.swift */,
+			);
+			path = HelperCalss;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,9 +234,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8889A21D2698CF2A003375E6 /* ServiceManager.swift in Sources */,
+				8889A2162698CF2A003375E6 /* ShopModel.swift in Sources */,
+				8889A21B2698CF2A003375E6 /* Extensions.swift in Sources */,
 				3E727F03267281F7006C11AC /* ANFExploreCardTableViewController.swift in Sources */,
 				3E727ED326727088006C11AC /* AppDelegate.swift in Sources */,
 				3E727ED526727088006C11AC /* SceneDelegate.swift in Sources */,
+				8889A2172698CF2A003375E6 /* ShopViewModel.swift in Sources */,
+				8889A21A2698CF2A003375E6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

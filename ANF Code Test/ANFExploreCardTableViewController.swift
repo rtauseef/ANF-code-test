@@ -7,6 +7,23 @@ import UIKit
 
 class ANFExploreCardTableViewController: UITableViewController {
 
+    //MARK:- Variables
+    let shopViewModel = ShopViewModel()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = "Shop"
+        
+        fetchRecords()
+    }
+    
+    func fetchRecords() {
+        
+        shopViewModel.fetchData { [weak self] (status) in
+            self?.tableView.reloadData()
+        }
+    }
+    
     private var exploreData: [[AnyHashable: Any]]? {
         if let filePath = Bundle.main.path(forResource: "exploreData", ofType: "json"),
          let fileContent = try? Data(contentsOf: URL(fileURLWithPath: filePath)),
@@ -34,5 +51,9 @@ class ANFExploreCardTableViewController: UITableViewController {
         }
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
 }

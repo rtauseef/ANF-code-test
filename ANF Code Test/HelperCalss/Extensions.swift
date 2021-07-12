@@ -35,10 +35,11 @@ extension UIImageView {
         }
     }
     
-    func loadImage(link: String, placeholder: String) {
+    func loadImage(link: String, placeholder: String, completion: (() -> ())? = nil) {
         
         guard let url = URL.init(string: link) else {
             self.image = UIImage.init(named: placeholder)
+            completion?()
             return
         }
         
@@ -51,6 +52,7 @@ extension UIImageView {
         if FileManager.default.fileExists(atPath: fileURL.path) {
             let image = UIImage(contentsOfFile: fileURL.path)
             self.image = image
+            completion?()
         } else {
             URLSession.shared.dataTask(with: url) { (data, response, error) in
                 
@@ -66,9 +68,11 @@ extension UIImageView {
                         } catch {
                             print("error saving file:", error)
                         }
+                        completion?()
                         
                     } else {
                         self?.image = UIImage.init(named: placeholder)
+                        completion?()
                     }
                 }
             }.resume()

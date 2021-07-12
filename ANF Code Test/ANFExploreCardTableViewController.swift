@@ -54,6 +54,8 @@ class ANFExploreCardTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let vcDetail = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        vcDetail.objShop = shopViewModel.arrData[indexPath.row]
+        self.navigationController?.pushViewController(vcDetail, animated: true)
     }
 }

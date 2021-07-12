@@ -12,7 +12,8 @@ class ANFExploreCardTableViewControllerTests: XCTestCase {
     var testInstance: ANFExploreCardTableViewController!
     
     override func setUp() {
-        testInstance = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController() as? ANFExploreCardTableViewController
+        testInstance = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ANFExploreCardTableViewController") as? ANFExploreCardTableViewController
+        testInstance.tableView.reloadData()
     }
 
     func test_numberOfSections_ShouldBeOne() {

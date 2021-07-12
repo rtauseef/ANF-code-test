@@ -2,8 +2,6 @@
 //  DetailViewControllerTests.swift
 //  ANF Code TestTests
 //
-//  Created by iMac on 10/07/21.
-//
 
 import XCTest
 @testable import ANF_Code_Test
@@ -89,16 +87,22 @@ class DetailViewControllerTests: XCTestCase {
         
         task.resume()
         
-        waitForExpectations(timeout: task.originalRequest!.timeoutInterval) { error in
+        waitForExpectations(timeout: task.originalRequest!.timeoutInterval) { [self] error in
             task.cancel()
             
-            self.checkItems()
+            // to check single item
+            let model = self.shopViewModel.arrData[0]
+            self.checkItem(model: model)
+            
+            // to check all item
+//            for item in self.shopViewModel.arrData {
+//                self.checkItem(model: item)
+//            }
         }
     }
-    
+        
     //MARK:- Check single item
-    func checkItems() {
-        let model = shopViewModel.arrData[0]
+    func checkItem(model: ShopModel) {
         
         XCTAssertNotNil(model.title, "Title is nil")
         XCTAssertNotNil(model.backgroundImage, "Image is nil")
@@ -106,11 +110,11 @@ class DetailViewControllerTests: XCTestCase {
         XCTAssertNotNil(model.topDescription, "Top description is nil")
         XCTAssertNotNil(model.bottomDescription, "Bottom description is nil")
         XCTAssertNotNil(model.content, "Content is nil")
-
-        let modelContent = model.content![0]
         
-        XCTAssertNotNil(modelContent.title, "Content title is nil")
-        XCTAssertNotNil(modelContent.target, "Content target is nil")
+        for modelContent in model.content! {
+            XCTAssertNotNil(modelContent.title, "Content title is nil")
+            XCTAssertNotNil(modelContent.target, "Content target is nil")
+        }
     }
     
     override func tearDown() {

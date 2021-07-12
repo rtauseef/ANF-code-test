@@ -20,11 +20,12 @@ class ContentCell: UITableViewCell {
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var scrView: UIScrollView!
     @IBOutlet weak var heightImg: NSLayoutConstraint!
     @IBOutlet weak var lblTopDesccription: UILabel!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblPromoMessage: UILabel!
-    @IBOutlet weak var lblBottomDescription: UILabel!
+    @IBOutlet weak var lblBottomDescription: UITextView!
     @IBOutlet weak var tblContent: UITableView!
     @IBOutlet weak var heightTblContent: NSLayoutConstraint!
     
@@ -37,6 +38,9 @@ class DetailViewController: UIViewController {
         
         tblContent.delegate = self
         tblContent.dataSource = self
+        
+//        self.edgesForExtendedLayout = UIRectEdge.all
+//        scrView.contentInsetAdjustmentBehavior = .scrollableAxes
         
         setData()
     }
@@ -61,7 +65,10 @@ class DetailViewController: UIViewController {
         lblTopDesccription.text = objShop.topDescription
         lblTitle.text = objShop.title
         lblPromoMessage.text = objShop.promoMessage
-        lblBottomDescription.text = objShop.bottomDescription
+        lblBottomDescription.attributedText = objShop.bottomDescription?.attributedHtmlString
+                
+        lblBottomDescription.sizeToFit()
+        lblBottomDescription.textAlignment = .center
         
         let countContent = objShop.content?.count ?? 0
         heightTblContent.constant = CGFloat(countContent) * 50.0

@@ -10,7 +10,9 @@ class ANFExploreCardTableViewController: UITableViewController {
     //MARK:- Variables
     let shopViewModel = ShopViewModel()
 
+    //MARK:- Life-cycle
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.title = "Shop"
         
@@ -23,12 +25,14 @@ class ANFExploreCardTableViewController: UITableViewController {
         fetchRecords()
     }
     
+    //MARK:- Fetch records from server
     func fetchRecords() {
         shopViewModel.fetchData { [weak self] (status) in
             self?.tableView.reloadData()
         }
     }
-        
+       
+    //MARK:- Delegate & Data-source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         shopViewModel.arrData.count
     }

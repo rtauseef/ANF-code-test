@@ -15,6 +15,7 @@ struct ShopModel: Codable {
     var content: [ContentModel]?
 }
 
+//MARK:- ContentModel structure
 struct ContentModel: Codable {
     var target: String?
     var title: String?

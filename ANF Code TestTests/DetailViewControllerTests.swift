@@ -2,6 +2,8 @@
 //  DetailViewControllerTests.swift
 //  ANF Code TestTests
 //
+//  Created by iMac on 10/07/21.
+//
 
 import XCTest
 @testable import ANF_Code_Test
@@ -21,17 +23,22 @@ class DetailViewControllerTests: XCTestCase {
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
+    //MARK:- Test api
     func testApiResponse() throws {
         
         // for test api response
         let URL = NSURL(string: API_URL)!
         let exp = self.expectation(description: "GET \(URL)")
         
+        // api call
         let session = URLSession.shared
         let task = session.dataTask(with: URL as URL) { data, response, error in
+            
+            // check data & error
             XCTAssertNotNil(data, "data should not be nil")
             XCTAssertNil(error, "error should be nil")
             
+            // check response
             if let HTTPResponse = response as? HTTPURLResponse,
                let responseURL = HTTPResponse.url
             {
@@ -54,6 +61,7 @@ class DetailViewControllerTests: XCTestCase {
         }
     }
     
+    //MARK:- Test shop items
     func testShopItems() throws {
 
         let URL = NSURL(string: API_URL)!
@@ -88,6 +96,7 @@ class DetailViewControllerTests: XCTestCase {
         }
     }
     
+    //MARK:- Check single item
     func checkItems() {
         let model = shopViewModel.arrData[0]
         

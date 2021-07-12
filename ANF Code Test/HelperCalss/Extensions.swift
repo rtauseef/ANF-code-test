@@ -5,10 +5,10 @@
 import UIKit
 import Foundation
 
-
-//MARK:- Extension
+//MARK:- UIImageView
 extension UIImageView {
     
+    // load image from cache
     func downloadImage(link: String, placeholder: String) {
         
         if let cachedImage = imageCache.object(forKey: link as NSString) {
@@ -35,6 +35,7 @@ extension UIImageView {
         }
     }
     
+    // download image
     func loadImage(link: String, placeholder: String, completion: (() -> ())? = nil) {
         
         guard let url = URL.init(string: link) else {
@@ -80,7 +81,9 @@ extension UIImageView {
     }
 }
 
+//MARK:- String
 extension String {
+    
     var utfData: Data {
         return Data(utf8)
     }
@@ -99,6 +102,7 @@ extension String {
     }
 }
 
+//MARK:- UILabel
 extension UILabel {
    func setAttributedHtmlText(_ html: String) {
       if let attributedText = html.attributedHtmlString {

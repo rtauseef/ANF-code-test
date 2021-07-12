@@ -5,6 +5,7 @@
 
 import UIKit
 
+//MARK:- Content cell
 class ContentCell: UITableViewCell {
     
     @IBOutlet weak var btnTarget: UIButton!
@@ -17,8 +18,10 @@ class ContentCell: UITableViewCell {
     }
 }
 
+//MARK:- Detail view controller
 class DetailViewController: UIViewController {
 
+    //MARK:- Outlets
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var scrView: UIScrollView!
     @IBOutlet weak var heightImg: NSLayoutConstraint!
@@ -29,8 +32,10 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var tblContent: UITableView!
     @IBOutlet weak var heightTblContent: NSLayoutConstraint!
     
+    //MARK:- Variables
     var objShop: ShopModel?
     
+    //MARK:- Life-cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,18 +44,18 @@ class DetailViewController: UIViewController {
         tblContent.delegate = self
         tblContent.dataSource = self
         
-//        self.edgesForExtendedLayout = UIRectEdge.all
-//        scrView.contentInsetAdjustmentBehavior = .scrollableAxes
-        
         setData()
     }
     
+    //MARK:- Set shop item data
     func setData() {
         
+        // check for nil
         guard let objShop = objShop else {
             return
         }
         
+        // check for background image
         if let name = objShop.backgroundImage {
             if let image = UIImage(named: name) {
                 img.image = image
@@ -74,7 +79,8 @@ class DetailViewController: UIViewController {
         heightTblContent.constant = CGFloat(countContent) * 50.0
         tblContent.reloadData()
     }
-        
+    
+    //MARK:- Set Imageview layout
     func setImageViewHeight() {
         
         guard let size = img.image?.size else {
@@ -86,6 +92,7 @@ class DetailViewController: UIViewController {
     }
 }
 
+//MARK:- Tableview Delegate & Data-source
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -113,6 +120,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    //MARK:- Target action
     @objc func btnTargetTapped(_ sender: UIButton) {
         
         guard let objContent = objShop?.content?[sender.tag],
@@ -122,6 +130,5 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
-
     }
 }

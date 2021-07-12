@@ -22,6 +22,7 @@
 		8889A21D2698CF2A003375E6 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889A2152698CF2A003375E6 /* ServiceManager.swift */; };
 		8889A22B2698D712003375E6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889A22A2698D712003375E6 /* DetailViewController.swift */; };
 		88911E9226997A9D00A2D598 /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88911E9126997A9D00A2D598 /* DetailViewControllerTests.swift */; };
+		88911E942699B6EB00A2D598 /* LocalJsonDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88911E932699B6EB00A2D598 /* LocalJsonDataTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		8889A2152698CF2A003375E6 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		8889A22A2698D712003375E6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		88911E9126997A9D00A2D598 /* DetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTests.swift; sourceTree = "<group>"; };
+		88911E932699B6EB00A2D598 /* LocalJsonDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalJsonDataTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			children = (
 				3E727EE92672708B006C11AC /* ANFExploreCardTableViewControllerTests.swift */,
 				88911E9126997A9D00A2D598 /* DetailViewControllerTests.swift */,
+				88911E932699B6EB00A2D598 /* LocalJsonDataTests.swift */,
 				3E727EEB2672708B006C11AC /* Info.plist */,
 			);
 			path = "ANF Code TestTests";
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E727EEA2672708B006C11AC /* ANFExploreCardTableViewControllerTests.swift in Sources */,
+				88911E942699B6EB00A2D598 /* LocalJsonDataTests.swift in Sources */,
 				88911E9226997A9D00A2D598 /* DetailViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

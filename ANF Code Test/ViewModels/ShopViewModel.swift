@@ -1,6 +1,5 @@
 //
 //  ShopViewModel.swift
-//  AlbumApp
 //
 
 import Foundation
